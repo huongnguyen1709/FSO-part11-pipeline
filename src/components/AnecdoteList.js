@@ -1,7 +1,7 @@
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { voteAnec } from '../reducers/anecdoteReducer';
-import { setNotification } from '../reducers/notificationReducer';
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { voteAnec } from '../reducers/anecdoteReducer'
+import { setNotification } from '../reducers/notificationReducer'
 
 const Anecdote = ({ content, votes, handleVote }) => {
   return (
@@ -12,21 +12,21 @@ const Anecdote = ({ content, votes, handleVote }) => {
         <button onClick={handleVote}>vote</button>
       </div>
     </li>
-  );
-};
+  )
+}
 
 const AnecdoteList = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
   const anecdotes = useSelector((state) => {
     if (state.filter) {
-      const filter = state.filter.toLowerCase();
+      const filter = state.filter.toLowerCase()
       const anecFilter = state.anecdotes.filter(
         (anec) => anec.content.toLowerCase().indexOf(filter) !== -1
-      );
-      return anecFilter;
+      )
+      return anecFilter
     }
-    return state.anecdotes;
-  });
+    return state.anecdotes
+  })
 
   return (
     <ul>
@@ -36,13 +36,13 @@ const AnecdoteList = () => {
           content={anecdote.content}
           votes={anecdote.votes}
           handleVote={() => {
-            dispatch(voteAnec(anecdote));
-            dispatch(setNotification(`you voted '${anecdote.content}'`, 5));
+            dispatch(voteAnec(anecdote))
+            dispatch(setNotification(`you voted '${anecdote.content}'`, 5))
           }}
         />
       ))}
     </ul>
-  );
-};
+  )
+}
 
-export default AnecdoteList;
+export default AnecdoteList
