@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import '@testing-library/jest-dom/extend-expect'
-import '@babel/polyfill'
 import App from '../src/App'
 import { Provider } from 'react-redux'
 import store from '../src/store'
