@@ -1,7 +1,7 @@
-import { create, router as _router, defaults } from 'json-server'
-const app = create()
-const router = _router('anecdotes.json')
-const middlewares = defaults({
+const jsonServer = require('json-server')
+const app = jsonServer.create()
+const router = jsonServer.router('anecdotes.json')
+const middlewares = jsonServer.defaults({
   static: './build'
 })
 const PORT = process.env.PORT || 3000
