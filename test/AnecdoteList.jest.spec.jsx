@@ -1,11 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import '@testing-library/jest-dom/extend-expect'
 import App from '../src/App'
 import { Provider } from 'react-redux'
 import store from '../src/store'
-import 'core-js/stable'
-import 'regenerator-runtime/runtime'
 
 describe('test App.js', () => {
   it('renders without crashing', () => {
