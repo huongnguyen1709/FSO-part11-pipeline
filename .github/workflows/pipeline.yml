@@ -39,5 +39,5 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: 'anecdotes09' #Must be unique in Heroku
           heroku_email: 'huongnguyen.nth1709@gmail.com'
-          healthcheck: 'https://https://anecdotes09.herokuapp.com/db'
+          healthcheck: 'https://anecdotes09.herokuapp.com/db'
           checkstring: 'anecdotes'
