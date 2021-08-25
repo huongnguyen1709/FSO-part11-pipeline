@@ -40,3 +40,4 @@ jobs:
           heroku_app_name: 'anecdotes09' #Must be unique in Heroku
           heroku_email: 'huongnguyen.nth1709@gmail.com'
           healthcheck: 'https://anecdotes09.herokuapp.com/db'
+          rollbackonhealthcheckfailed: true
