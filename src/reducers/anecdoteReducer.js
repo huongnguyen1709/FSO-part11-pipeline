@@ -4,7 +4,7 @@ const reducer = (state = [], action) => {
   switch (action.type) {
   case 'INIT_ANECDOTES':
     // eslint-disable-next-line no-case-declarations
-    const anecdotes = action.data
+    const anecdotes = action.data.anecdotes
     anecdotes.sort((a, b) => (a.votes > b.votes ? -1 : 1))
     return [...anecdotes]
   case 'VOTE_ANECDOTE':
@@ -21,7 +21,6 @@ const reducer = (state = [], action) => {
 export const initializeAnecdotes = () => {
   return async (dispatch) => {
     const anecdotes = await anecdoteService.getAll()
-    console.log(anecdotes)
     dispatch({
       type: 'INIT_ANECDOTES',
       data: anecdotes,
