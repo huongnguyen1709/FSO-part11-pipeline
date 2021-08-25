@@ -4,7 +4,7 @@ const reducer = (state = [], action) => {
   switch (action.type) {
   case 'INIT_ANECDOTES':
     // eslint-disable-next-line no-case-declarations
-    const anecdotes = action.data.anecdotes
+    const anecdotes = action.data
     anecdotes.sort((a, b) => (a.votes > b.votes ? -1 : 1))
     return [...anecdotes]
   case 'VOTE_ANECDOTE':

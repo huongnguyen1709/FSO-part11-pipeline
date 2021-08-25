@@ -7,12 +7,9 @@ const middlewares = jsonServer.defaults({
 const PORT = process.env.PORT || 3000
 
 app.use(middlewares)
-// Have all URLS prefixed with a /api
-app.use(
-  jsonServer.rewriter({
-    '/api/anecdotes': '/anecdotes',
-  })
-)
+app.use(jsonServer.rewriter({
+  '/api/anecdotes': '/anecdotes'
+}))
 app.use(router)
 
 app.listen(PORT, () => {
