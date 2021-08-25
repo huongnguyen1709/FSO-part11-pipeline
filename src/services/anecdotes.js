@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const baseUrl = 'http://localhost:3000/db'
+const baseUrl = '/db'
 
 const getId = () => (100000 * Math.random()).toFixed(0)
 
