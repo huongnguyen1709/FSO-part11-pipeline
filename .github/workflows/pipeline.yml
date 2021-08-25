@@ -32,3 +32,10 @@ jobs:
           command: npm run test:e2e
           start: npm run start-prod
           wait-on: http://localhost:3000
+      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+        if: ${{github.event_name == 'push' && env.SKIP_COMMITS}}
+        id: deployment
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: 'anecdotes09' #Must be unique in Heroku
+          heroku_email: 'huongnguyen.nth1709@gmail.com'
