@@ -12,6 +12,14 @@ app.use(jsonServer.rewriter({
 }))
 app.use(router)
 
+app.get('/health', (req, res) => {
+  res.send('ok')
+})
+
+app.get('/version', (req, res) => {
+  res.send('a new version deployed')
+})
+
 app.listen(PORT, () => {
   console.log('server started on port 3000')
 })
