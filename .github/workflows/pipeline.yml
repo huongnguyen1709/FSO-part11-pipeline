@@ -41,6 +41,7 @@ jobs:
           heroku_email: 'huongnguyen.nth1709@gmail.com'
           healthcheck: 'https://anecdotes09.herokuapp.com/db'
           rollbackonhealthcheckfailed: true
+      - uses: actions/checkout@v2
       - name: Bump version and push tag
         if: ${{github.event_name == 'push' && env.SKIP_COMMITS}}
         uses: anothrNick/github-tag-action@1.33.0
